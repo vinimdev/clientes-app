@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.components';
 import { CursoAngularComponent } from './curso-angular/curso-angular.component';
 
+import { ClientesModule } from './clientes/clientes.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { CursoAngularComponent } from './curso-angular/curso-angular.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ClientesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
