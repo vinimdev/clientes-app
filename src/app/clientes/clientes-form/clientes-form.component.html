@@ -1,1 +1,43 @@
-<h1>Formulário de clientes!</h1>
+<h1 class="mt-4">Clientes</h1>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item active">Cadastro</li>
+</ol>
+
+<div class="container">
+  <form action="">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="cliente-id">ID:</label>
+          <input type="text" name="cliente-id" class="form-control" disabled/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="cliente-dataCadastro">Data Cadastro:</label>
+          <input type="text" name="cliente-dataCadastro" class="form-control" disabled/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="cliente-nome">Nome: *</label>
+          <input type="text" name="cliente-nome" class="form-control"/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="cliente-cpf">CPF: *</label>
+          <input type="text" name="cliente-cpf" class="form-control"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-success">
+          <i class="fa fa-save"></i> Salvar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
