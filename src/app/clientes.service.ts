@@ -10,11 +10,17 @@ export class ClientesService {
 
   constructor( private httpClient: HttpClient ) { }
 
-  getCliente(): Cliente {
+  // getClientes(): Observable<Cliente[]> {
+  //   return null;
+  // }
+
+  getClientes(): Cliente[] {
     let cliente: Cliente = new Cliente();
+    cliente.id = 1;
     cliente.nome = 'Fulano de tal';
     cliente.cpf = '88888888888';
-    return cliente;
+    cliente.dataCadastro = '14/08/1998'
+    return [cliente];
   }
 
   salvar(cliente: Cliente): Observable<Cliente> {
