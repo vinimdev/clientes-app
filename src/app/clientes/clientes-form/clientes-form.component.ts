@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente';
 import { ClientesService } from 'src/app/clientes.service';
@@ -24,16 +25,18 @@ export class ClientesFormComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    let params: Params = this.activatedRoute.params;
-    if (params['value'].id) {
-      this.id = params['value'].id;
-      this.clientesService
-      .getClientesById(this.id)
-      .subscribe(
-        response => this.cliente = response,
-        errorResponse => this.cliente = new Cliente()
-        );
-    }
+    let params: Observable<Params> = this.activatedRoute.params;
+    params.subscribe(urlParams => {
+      this.id = urlParams['id'];
+      if (this.id) {
+        this.clientesService
+        .getClientesById(this.id)
+        .subscribe(
+          response => this.cliente = response,
+          errorResponse => this.cliente = new Cliente()
+          );
+      }
+    });
   }
 
   onSubmit() {
